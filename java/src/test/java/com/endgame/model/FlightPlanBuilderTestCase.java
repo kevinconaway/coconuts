@@ -5,7 +5,6 @@ import com.endgame.coconuts.model.FlightPlanBuilder;
 import com.endgame.coconuts.model.ModelBuilder;
 import com.endgame.coconuts.model.Segment;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.InputStreamReader;
@@ -15,7 +14,6 @@ import java.util.Iterator;
 public class FlightPlanBuilderTestCase {
 
     @Test
-    @Ignore
     public void testFlightPlanForSamplePaths() throws Exception {
         Reader reader = new InputStreamReader(getClass().getResourceAsStream("/sample_paths.txt"));
 
@@ -36,7 +34,6 @@ public class FlightPlanBuilderTestCase {
     }
 
     @Test
-    @Ignore
     public void testFlightPlanForMultipleStartPoints() throws Exception {
         Reader reader = new InputStreamReader(getClass().getResourceAsStream("/multiple_start_points.txt"));
 
