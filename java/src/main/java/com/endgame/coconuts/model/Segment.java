@@ -26,7 +26,7 @@ public class Segment {
 
     @Override
     public String toString() {
-        return "Segment["+start+"-"+end+". energyRequired: "+energyRequired;
+        return "Segment["+start+"-"+end+". energyRequired: "+energyRequired+"]";
     }
 
     @Override

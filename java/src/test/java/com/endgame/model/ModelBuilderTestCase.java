@@ -1,6 +1,5 @@
 package com.endgame.model;
 
-import com.endgame.coconuts.model.JetStream;
 import com.endgame.coconuts.model.ModelBuilder;
 import com.endgame.coconuts.model.Segment;
 import org.junit.Assert;
@@ -14,15 +13,14 @@ import java.util.Iterator;
 public class ModelBuilderTestCase {
 
     @Test
-    public void testParseModel() throws IOException {
+    public void testParsSamplePaths() throws IOException {
         Reader reader = new InputStreamReader(getClass().getResourceAsStream("/sample_paths.txt"));
 
         ModelBuilder builder = new ModelBuilder(reader);
 
         Assert.assertEquals(50, builder.getEnergyConstant());
 
-        JetStream jetStream = builder.getJetStream();
-        Iterator<Segment> segments = jetStream.getSegments().iterator();
+        Iterator<Segment> segments = builder.getSegments().iterator();
 
         Assert.assertEquals(new Segment(0, 5, 10), segments.next());
         Assert.assertEquals(new Segment(1, 3, 5), segments.next());
