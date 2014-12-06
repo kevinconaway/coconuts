@@ -5,11 +5,17 @@ public class Segment {
     private final int start;
     private final int end;
     private final int energyRequired;
+    private final boolean manual;
 
-    public Segment(int start, int end, int energyRequired) {
+    public Segment(int start, int end, int energyRequired, boolean manual) {
         this.start = start;
         this.end = end;
         this.energyRequired = energyRequired;
+        this.manual = manual;
+    }
+
+    public Segment(int start, int end, int energyRequired) {
+        this(start, end, energyRequired, false);
     }
 
     public int getEnergyRequired() {
@@ -24,9 +30,13 @@ public class Segment {
         return end;
     }
 
+    public boolean isManual() {
+        return manual;
+    }
+
     @Override
     public String toString() {
-        return "Segment["+start+"-"+end+". energyRequired: "+energyRequired+"]";
+        return manual ? "ManualSegment["+start+"-"+end+". energyRequired: "+energyRequired+"]" : "JetStreamSegment["+start+"-"+end+". energyRequired: "+energyRequired+"]";
     }
 
     @Override
