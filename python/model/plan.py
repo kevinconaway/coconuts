@@ -12,7 +12,7 @@ class PriorityQueue(object):
     def __init__(self):
         self.pq = []
         self.entry_finder = {}
-        self.entrycount = 0
+        self.length = 0
         self.counter = itertools.count()
 
     def add(self, vertex, weight):
@@ -23,24 +23,24 @@ class PriorityQueue(object):
 
         self.entry_finder[vertex] = entry
         heapq.heappush(self.pq, entry)
-        self.entrycount += 1
+        self.length += 1
 
     def remove(self, vertex):
         entry = self.entry_finder.pop(vertex)
         entry[-1] = PriorityQueue.REMOVED
-        self.entrycount -= 1
+        self.length -= 1
 
     def pop(self):
         while self.pq:
             priority, count, vertex = heapq.heappop(self.pq)
             if vertex is not PriorityQueue.REMOVED:
-                self.entrycount -= 1
+                self.length -= 1
                 del self.entry_finder[vertex]
                 return vertex
         raise KeyError('pop from an empty priority queue')
 
     def __len__(self):
-        return self.entrycount
+        return self.length
 
 
 class FlightPlan(object):

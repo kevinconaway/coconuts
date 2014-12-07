@@ -17,7 +17,7 @@ flightPlanCalculator = plan.FlightPlanCalculator()
 flightPlan = flightPlanCalculator.calculate(source.segments, 0, source.lastMile)
 elapsed = int(time.time()) - int(start)
 
-print 'done in {0}ms\n'.format(elapsed)
+print 'done in {0}s\n'.format(elapsed)
 
 print "JetStream Segments: ", [(s.start, s.end) for s in flightPlan.jetStreamSegments]
 print "Total flight cost: ", flightPlan.totalEnergy
