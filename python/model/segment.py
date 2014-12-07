@@ -1,5 +1,6 @@
 import sys
 import fileinput
+from collections import deque
 
 class Segment(object):
 
@@ -53,6 +54,8 @@ class SegmentSource(object):
         processQueue = self.segments[:]
         processQueue.sort(key=lambda x: x.start)
 
+        processQueue = deque(processQueue)
+
         missingSegments = []
 
         if (self.firstMile != 0):
@@ -60,7 +63,7 @@ class SegmentSource(object):
             missingSegments.append(Segment(0, self.firstMile, cost, True))
 
         while processQueue:
-            segment = processQueue.pop(0)
+            segment = processQueue.popleft()
 
             for nextSegment in processQueue:
                 if nextSegment.start > segment.end:
