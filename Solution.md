@@ -2,7 +2,7 @@ I don't work with graphs  so I'll admit that the solution to this wasn't immedia
 
 My first inclination was to read in all of the jet stream segments and sort them in order of the starting mile.  I would then iterate over that list of segments and have the bird hop between them (making up the difference between segments as necessary). 
 
-This worked fine for the sample data but I started wondering what would happen if there were multiple jet stream segments at the same starting mile.  I then the above algorithm to pick the "best" segment amongst all possible segments at a given starting point.  The "best" segment being the shortest distance to the next jet stream segment.
+This worked fine for the sample data but I started wondering what would happen if there were multiple jet stream segments at the same starting mile.  I updated the above algorithm to pick the "best" segment amongst all possible segments at a given starting point.  The "best" segment being the shortest distance to the next jet stream segment.
 
 That worked OK too but then I started wondering about jet streams that may not be optimal at all.  What if the possibly insane king has a weather machine that makes flying in the jet stream the worse option?
 
