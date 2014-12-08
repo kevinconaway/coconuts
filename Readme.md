@@ -13,6 +13,7 @@ You can also run the test cases with
 
 If you want to run the python solution, cd to the *python* directory and run
 
+    python main.py data/sample_paths.txt
     python main.py data/flight_paths.txt
 
 You can also run the test cases with:

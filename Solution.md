@@ -28,7 +28,7 @@ After some more research, I read the Dijkstra's algorithm can be implemented a l
 
 The Java solution uses the native `PriorityQueue` but it doesn't support updating the priority for a given key.  Thus we remove and re-add the element.  This slows down the implementation considerably but given that it was just my reference I was OK with it.
 
-The python solution uses the [heapq](https://docs.python.org/2/library/heapq.html#module-heapq) module as a priority queue.  I used the provided code to allow the items in the queue to be re-weighted but it still runs pretty slow, about 2 minutes to calculate the graph on my machine.  I'm not sure if this is a result of my implementation or the heapq module.
+The python solution uses the [heapq](https://docs.python.org/2/library/heapq.html#module-heapq) module as a priority queue.  I used the provided code to allow the items in the queue to be re-weighted but it still runs pretty slow, about 2 minutes to calculate the graph on my machine.  I'm not sure if this is a result of my implementation or the heapq module.  I'm not thrilled with the performance here but I didn't have the time to investigate why its running as slow as it is.
 
 
 
